@@ -1,4 +1,4 @@
-let start = require("../src/s-calc")
+let start = require("../src/string-calculator")
 let myCalc = new start()
 
 describe("add()", function(){
@@ -28,8 +28,8 @@ describe("add()", function(){
 
     // test for throwing of an error when string contains negatives
     it("returns an error message and a negative number(s)", function(){
-        expect(myCalc.add("/-24/\n-2,%%")).toBe("negatives not allowed -24 -2");
-    });
+        expect(myCalc.add("/-21 /\n-2,%%")).toThrowError(Error)
+    })
 
     
     // test for ignoring numbers bigger than 1000 should 
