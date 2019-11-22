@@ -16,7 +16,7 @@ describe("add()", function(){
         expect(myCalc.add("7,3,3")).toBe(13)
     })
 
-    // test for handling new lines between string numbers
+    // test for handling new lines between string numbers instead of comma
     it("ignores newlines and continue adding numbers", function(){
         expect(myCalc.add("1\n2,3")).toBe(6);
     });
@@ -27,8 +27,10 @@ describe("add()", function(){
     });
 
     // test for throwing of an error when string contains negatives
-    it("returns an error message and a negative number(s)", function(){
-        expect(myCalc.add("/-21 /\n-2,%%")).toThrowError(Error)
+    it("returns an error message and a negative number(s)", () =>{
+        expect(() =>{
+            myCalc.add("/-1\n-2%")
+        }).toThrowError("negatives not allowed -1 -2 ");
     })
 
     

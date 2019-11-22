@@ -1,27 +1,25 @@
 module.exports = class StringCalculator{
 
     constructor(){
-
         this.myRgEx = /\d{1,}/gm
         
-        this.ntive = (string) => {
-
-        let mystring = ""
-        
-        for(let j = 0; j < string.length; j++) {
-
-            if(string[j] === "-" && !isNaN(string[j+1])){
-                mystring += "-"+ string[j+1] + " "
-            }
-
-        }
-
-        return mystring
-
-        }
-
-
     }
+
+    // ntive(string){
+   
+    //     let mystring = ""
+    
+    //     for(let j = 0; j < string.length; j++) {
+        
+    //         if(string[j] === "-" && !isNaN(string[j+1])){
+    //         mystring += "-"+ string[j+1] + " ";
+    //         }
+
+    //     }
+
+    //     return mystring
+    
+    // }
 
     add(string){
 
@@ -32,17 +30,18 @@ module.exports = class StringCalculator{
             return 0
         }
 
-        let neg = this.ntive(string)
-
-        try {
-
-            if(string.includes("-")){
-              throw new myError("negatives not allowed " + neg)
+        let mystring = ""
+    
+        for(let j = 0; j < string.length; j++) {
+        
+            if(string[j] === "-" && !isNaN(string[j+1])){
+            mystring += "-"+ string[j+1] + " ";
             }
 
-        } 
-        catch (myError) {
-            return myError
+        }
+
+        if(mystring != ""){
+            throw new Error("negatives not allowed " + mystring);
         }
 
         for(let j = 0; j < nums.length; j++){
