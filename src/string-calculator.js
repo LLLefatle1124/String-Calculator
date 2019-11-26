@@ -5,22 +5,6 @@ module.exports = class StringCalculator{
         
     }
 
-    // ntive(string){
-   
-    //     let mystring = ""
-    
-    //     for(let j = 0; j < string.length; j++) {
-        
-    //         if(string[j] === "-" && !isNaN(string[j+1])){
-    //         mystring += "-"+ string[j+1] + " ";
-    //         }
-
-    //     }
-
-    //     return mystring
-    
-    // }
-
     add(string){
 
         let tot = 0
